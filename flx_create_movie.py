@@ -37,13 +37,16 @@ if start.lower() == "yes" or "y":
             "movTim": movTim,
             "movPth":   "/browse/mov/"+movCatTrim+"/nocat/"+movNamTrim+".html",
             "movImg":   "/pub/covr/"+movCatTrim+"/nocat/"+movNamTrim+".webp",
-            "movImgBg": "/pub/covr"+movCatTrim+"nocat/"+movNamTrim+"_bg.webp",
+            "movImgBg": "/pub/covr/"+movCatTrim+"/nocat/"+movNamTrim+"_bg.webp",
             "movVidBg": "/pub/covr/"+movCatTrim+"/nocat/"+movNamTrim+"_vid.webp",
             "movIcoNm": 1,
             "movIcoNw": 1,
             "movIco4k": 0,
             "movIcoCc": 0
         }
+        json_obj = json.dumps(infoJson, indent=4)
+        with open(movNamTrim+".json", "w") as outfile:
+            outfile.write(json_obj) & print("\nNEMFLIX: " + movNamTrim+".json has been created!\n")
         
         # print("\n", infoJson)
 
