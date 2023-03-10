@@ -1,6 +1,7 @@
+# https://github.com/5kur4/py_flx
 import json
-import os # so i can clear console.
-clear = lambda: os.system('cls') # clears console when clear() is ran.
+import os
+clear = lambda: os.system('cls')
 clear()
 
 def easter_egg():
@@ -21,12 +22,12 @@ start = input("Create new movie? (Yes | No | help |54): ")
 if start.lower() == "yes" or "y":
     que2 = input("Options: Basic | Advanced: ")
     if que2.lower() == "basic" or "b":
-        movCat = input("\nmovie category:\n")
+        movCat = input("\nmovie category:\n").lower()
         movNam = input("\nMovie Name:\n")
         movDes = input("\nMovie Description:\n")
         movYea = input("\nMovie Year:\n")
         movTim = input("\nMovie Time:\n")
-        movNamTrim = movNam.lower().replace(" ", "_")
+        movNamTrim = movNam.replace(" ", "_")
         movCatTrim = movCat[0:3].lower()
         # print(movCatTrim)
 
@@ -45,14 +46,15 @@ if start.lower() == "yes" or "y":
             "movIcoCc": 0
         }
         json_obj = json.dumps(infoJson, indent=4)
-        with open(movNamTrim+".json", "w") as outfile:
-            outfile.write(json_obj) & print("\nNEMFLIX: " + movNamTrim+".json has been created!\n")
+        with open("./json/" + movCat + "/" + movNamTrim + ".json", "w") as outfile:
+            outfile.write(json_obj);
+            print("\n***********\nNEMFLIX - \"" + movNamTrim+".json\" has been created!\n***********\n\n")
         
         # print("\n", infoJson)
 
     if que2.lower() == "advanced" or "a":
         #mov4k  = input("4k Version: (1 = y, 0 = n)\n")
-        print("Coming soon.")
+        print("")
 elif start.lower() == "no" or "n":
     print("\nOkay..?\n")
 elif start.lower() == "help" or "h":
