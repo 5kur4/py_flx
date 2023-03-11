@@ -1,0 +1,5 @@
+# ✅ Complete.
+# 🟨 Working on it.
+# ❌ Not done.
+
+❌ if user paste description which contains " " then add \ before the double qoutes so: hello \"hello2\" hello3
